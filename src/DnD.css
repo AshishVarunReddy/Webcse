@@ -1,0 +1,12 @@
+.dnd{
+    position: absolute;
+    top:10px;
+    left:10px;
+    background-color: #4f4f4d;
+    width: 120px;
+    padding: 10px;
+    border-radius: 5px;
+}
+p{
+    color:black;
+}

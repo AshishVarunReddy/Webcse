@@ -1,0 +1,13 @@
+.SearchBar {
+    position: absolute;
+    right: 93px;
+    top: 45px;
+}
+
+#searchbar {
+    padding: 10px;
+    height: 40px;
+}
+#SearchBtn {
+    height:40px
+}

@@ -1,0 +1,7 @@
+.currTemp {
+    position:absolute;
+    top:180px;
+    left:8px;
+    background-color: #c4ff8d;
+    border-radius:10px;
+}

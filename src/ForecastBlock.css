@@ -1,0 +1,8 @@
+.forecast-block {
+    background-color: #4f4145;
+    border-radius: 10px;
+}
+h5,p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+}
