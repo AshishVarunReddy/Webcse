@@ -17,6 +17,7 @@ const  ForecastBlock= (props) => {
                         q : 'New York',
                     },
                 });
+                //large data is handled.......
                 const resdata = await response.data.forecast.forecastday.slice(followup,followup+1).map(item => ({
                     date : item.date,
                     avt : item.day.avgtemp_c,
