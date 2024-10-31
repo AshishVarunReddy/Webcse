@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 const  ForecastBlock= (props) => {
 
     const [futureCast, setFutureCast] = useState([])
-        const followup = props.followup - 1;
+        const followup = (props.followup) - 1;
     useEffect(()=>{
         const fetchForecast = async () => {
             try{
@@ -17,7 +17,12 @@ const  ForecastBlock= (props) => {
                         q : 'New York',
                     },
                 });
-                const resdata = await response.data.forecast.forecastday[followup]
+                const resdata = await response.data.forecast.forecastday.slice(followup,followup+1).map(item => ({
+                    date : item.date,
+                    avt : item.day.avgtemp_c,
+                    avh : item.day.avghumidity
+                }));
+
                     setFutureCast(resdata);
             }catch(error){
                 console.error("Error fetching the weather data", error);
@@ -28,9 +33,16 @@ const  ForecastBlock= (props) => {
     return (
         <div>{futureCast ? (
             <div className="forecast-block">
-                <h5> {futureCast.date} </h5>
-                <p>Avg Temp: {futureCast.day.avgtemp_c}°C</p>
-                <p>Avg Humidity: {futureCast.day.avghumidity}</p>
+                {
+                    futureCast.map((it, index) => (
+                        <div key = {index} className="Forecast">
+                <h5> {it.date} </h5>
+                <p>Avg Temp: {it.avt}°C</p>
+                <p>Avg Humidity: {it.avh}</p>
+                        </div>
+            )
+            )
+        }
             </div>
         ) : (
             <p>Loading...</p>
