@@ -4,13 +4,14 @@ import CurrTemp from "./CurrTemp.jsx";
 import SearchBar from "./SearchBar.jsx";
 import DnD from "./DnD.jsx";
 import ForecastLayout from "./ForecastLayout.jsx";
+import axios from "axios";
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
       <DnD />
-    <CurrTemp />
+      <CurrTemp />
       <SearchBar></SearchBar>
       <ForecastLayout></ForecastLayout>
     </>

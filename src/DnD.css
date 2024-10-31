@@ -1,7 +1,7 @@
 .dnd{
     position: absolute;
-    top:10px;
-    left:10px;
+    top:20x;
+    left:1000px;
     background-color: #4f4f4d;
     width: 120px;
     padding: 10px;
@@ -9,4 +9,5 @@
 }
 p{
     color:black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

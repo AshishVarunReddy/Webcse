@@ -1,8 +1,13 @@
 .forecast-block {
     background-color: #4f4145;
     border-radius: 10px;
+    height: 130px;
+    width: 130px;
 }
 h5,p{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: black;
+}
+.forecast-block p {
+    font-size: small;
 }

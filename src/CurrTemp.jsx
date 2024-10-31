@@ -1,13 +1,51 @@
 import React from 'react';
 import './CurrTemp.css'
+import axios from 'axios'
+import {useState, useEffect} from 'react'
 const CurrTemp = () => {
+    const [weatherData, setWeatherData] = useState(null);
+
+    useEffect(() => {
+        const fetchWeather = async () => {
+            try {
+                const response = await axios.get('https://api.openweathermap.org/data/2.5/weather', {
+                    params: {
+                        q: 'New York',
+                        appid: "e29c03b64c44d349fccfa7790d75da92",
+                        units: 'metric',
+                    },
+                });
+                setWeatherData(response.data); // Store the response data only
+            } catch (error) {
+                console.error("Error fetching the weather data", error);
+            }
+        };
+
+        fetchWeather()
+    }, []);
+
+
+
     return (
-        <div id = "currTemp" className = "currTemp">
-               <h3>Temperature</h3>
-            <p>Windspeed</p>
-            <p>Humidity(Optional)</p>
+        <div>
+            {weatherData ? (
+                <div className = "currTemp">
+                    <h2>Weather in {weatherData.name}</h2>
+                    <p>Temperature: {weatherData.main.temp}°C</p>
+                    <p>Feels Like: {weatherData.main.feels_like}°C</p>
+                    <p>Humidity: {weatherData.main.humidity}%</p>
+                    <p>Weather: {weatherData.weather[0].description}</p>
+                    <p>Wind Speed: {weatherData.wind.speed} m/s</p>
+                </div>
+            ) : (
+                <p className= "currTemp">Loading weather data...</p>
+            )}
         </div>
     );
-};
+
+
+
+
+}
 
 export default CurrTemp;
