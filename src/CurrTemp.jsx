@@ -2,15 +2,20 @@ import React from 'react';
 import './CurrTemp.css'
 import axios from 'axios'
 import {useState, useEffect} from 'react'
-const CurrTemp = () => {
-    const [weatherData, setWeatherData] = useState(null);
+import {useContext} from 'react';
+// import SearchBar from "./SearchBar.jsx";
+import {SearchQuery} from "./SearchQuery.jsx";
 
+
+const CurrTemp = () => {
+    const {searchQuery} = useContext(SearchQuery);
+    const [weatherData, setWeatherData] = useState(null);
     useEffect(() => {
         const fetchWeather = async () => {
             try {
                 const response = await axios.get('https://api.openweathermap.org/data/2.5/weather', {
                     params: {
-                        q: 'New York',
+                        q: searchQuery,
                         appid: "e29c03b64c44d349fccfa7790d75da92",
                         units: 'metric',
                     },
@@ -22,7 +27,7 @@ const CurrTemp = () => {
         };
 
         fetchWeather()
-    }, []);
+    }, [searchQuery]);
 
 
 

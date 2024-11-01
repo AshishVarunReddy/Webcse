@@ -11,10 +11,10 @@ const  ForecastBlock= (props) => {
     useEffect(()=>{
         const fetchForecast = async () => {
             try{
-                const response = await axios.get('https://api.weatherapi.com/v1/forecast.json?key=a8aef7dc90914ba489f133958243110&q=New York&days=7&aqi=no&alerts=no', {
+                const response = await axios.get('https://api.weatherapi.com/v1/forecast.json?key=a8aef7dc90914ba489f133958243110&days=7&aqi=no&alerts=no', {
                     params: {
                         appid:'a8aef7dc90914ba489f133958243110',
-                        q : 'New York',
+                        q : 'Kolkata',
                     },
                 });
                 //large data is handled.......
