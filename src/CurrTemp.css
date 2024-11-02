@@ -2,6 +2,13 @@
     position:absolute;
     top:100px;
     left:8px;
-    background-color: #c4ff8d;
+    background: linear-gradient(40deg, #e5b0ea, #32a2f3, #a7edfb, #89e8fb);
     border-radius:10px;
+
+}
+.headingTemp{
+    background-image:linear-gradient(40deg, #fb943c, #6cea62, #057724, #03d5ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }

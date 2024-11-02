@@ -15,10 +15,11 @@ function App() {
             <SearchBar ></SearchBar>
             <DnD />
             <CurrTemp />
+            <ForecastLayout></ForecastLayout>
         </SearchProvider>
 
 
-      <ForecastLayout></ForecastLayout>
+
     </>
   )
 }

@@ -1,11 +1,12 @@
+
 .dnd{
     position: absolute;
-    top:20x;
-    left:1000px;
-    background-color: #4f4f4d;
+    top:110px;
+    left:350px;
     width: 120px;
     padding: 10px;
     border-radius: 5px;
+    background: #4f4f4d linear-gradient(40deg, #8b878c, #aeaaa7, #f3a767, #03d5ff);
 }
 p{
     color:black;

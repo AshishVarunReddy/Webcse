@@ -35,7 +35,7 @@ const CurrTemp = () => {
         <div>
             {weatherData ? (
                 <div className = "currTemp">
-                    <h2>Weather in {weatherData.name}</h2>
+                    <h2 className="headingTemp">Weather in {weatherData.name}</h2>
                     <p>Temperature: {weatherData.main.temp}°C</p>
                     <p>Feels Like: {weatherData.main.feels_like}°C</p>
                     <p>Humidity: {weatherData.main.humidity}%</p>

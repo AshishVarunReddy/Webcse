@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './ForecastBlock.css'
 import axios from 'axios';
 import {useEffect, useState} from 'react';
 import PropTypes from 'prop-types'
+import {SearchQuery} from "./SearchQuery.jsx";
 
 const  ForecastBlock= (props) => {
-
+    const {searchQuery} = useContext(SearchQuery);
     const [futureCast, setFutureCast] = useState([])
         const followup = (props.followup) - 1;
     useEffect(()=>{
@@ -14,7 +15,7 @@ const  ForecastBlock= (props) => {
                 const response = await axios.get('https://api.weatherapi.com/v1/forecast.json?key=a8aef7dc90914ba489f133958243110&days=7&aqi=no&alerts=no', {
                     params: {
                         appid:'a8aef7dc90914ba489f133958243110',
-                        q : 'Kolkata',
+                        q : searchQuery,
                     },
                 });
                 //large data is handled.......
@@ -25,12 +26,13 @@ const  ForecastBlock= (props) => {
                 }));
 
                     setFutureCast(resdata);
+                    console.log('done')
             }catch(error){
                 console.error("Error fetching the weather data", error);
             }
         }
         fetchForecast();
-    }, [])
+    }, [searchQuery])
     return (
         <div>{futureCast ? (
             <div className="forecast-block">

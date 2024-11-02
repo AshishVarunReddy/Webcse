@@ -8,7 +8,7 @@ export const SearchQuery = createContext()
 
 
 export const SearchProvider = ({children}) => {
-    const [searchQuery, setSearchQuery] = useState("Medak")
+    const [searchQuery, setSearchQuery] = useState("Dhanbad")
 
 
     const updateSearchQuery = useCallback((value) =>setSearchQuery(value), [])
