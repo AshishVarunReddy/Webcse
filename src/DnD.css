@@ -8,7 +8,10 @@
     border-radius: 5px;
     background: #4f4f4d linear-gradient(40deg, #8b878c, #aeaaa7, #f3a767, #03d5ff);
 }
-p{
-    color:black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.dnd p{
+
+    font-family: "Calisto MT", Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 17px;
 }

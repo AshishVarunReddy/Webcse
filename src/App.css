@@ -7,5 +7,9 @@
 
 body{
 
-  overflow-x : auto;
+  position : relative;
+  min-width : 1024px;
+  min-height: 100vh;
+  background-position : center;
+  background-size: cover;
 }

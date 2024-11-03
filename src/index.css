@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -17,7 +21,7 @@
 html{
   scroll-behavior: smooth;
   overflow-x: auto;
-  background: linear-gradient(45deg, #a9f166, #dbf6c1, #03d5ff, #03d5ff);
+  background: linear-gradient(45deg, #a9f166, #dbf6c1, #03d5ff, #03d5ff, aquamarine, red, violet);
 
 }
 
@@ -25,8 +29,12 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  /*position: fixed;*/
+
+  min-width: 100vw;             /* Example width of a maximized screen */
+  min-height: 100vh;            /* Example height of a maximized screen */
+  overflow-x: auto;            /* Allows scrolling for smaller screens */
+  overflow-y: auto;
 }
 
 
@@ -35,14 +43,20 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
+
+
+
+
+
+/* Continue this pattern for longer text */
 #heading{
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   position:Absolute;
   top: 5px;
   left:200px;
   color: blueviolet;
+  font-size: 1.9em;
 }
-
 
 
 

@@ -2,13 +2,20 @@
     position:absolute;
     top:100px;
     left:8px;
-    background: linear-gradient(40deg, #e5b0ea, #32a2f3, #a7edfb, #89e8fb);
+    background: linear-gradient(40deg, #e5b0ea, #32a2f3, #6ad6ec, #89e8fb);
     border-radius:10px;
+    max-width:100%;
 
+}
+.currTemp p{
+    font-family: "Calisto MT", Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: #fdfcfc;
 }
 .headingTemp{
     background-image:linear-gradient(40deg, #fb943c, #6cea62, #057724, #03d5ff);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+
 }

@@ -16,6 +16,12 @@ const SearchBar = () => {
         setSearchQuery(search);
         console.log(search);
     }
+
+
+    const favClick = (fav) => {
+        setSearchQuery(fav);
+        console.log(fav);
+    }
     const handleFav = () => {
             myFav.add(search.toLowerCase());
             console.log(myFav);
@@ -37,23 +43,23 @@ const SearchBar = () => {
                 <input type="button" value="Search" id="SearchBtn" onClick={handleSearch}/>
                 <label htmlFor="SearchBtn"></label>
                 <input id="FavBtn" type="button" value="Favorite it!" onClick={handleFav}/>
-                <button onClick={ToggleFavourites} id = "ToggleFav">
-                    <div className="togFavorite">
-                    {togglefav ? "Hide Favourites" : "Show Favourites"}
-                        </div>
+
+                <div className="favorites-container" >
+                    <button onClick={ToggleFavourites} id = "ToggleFav" className="toggle-block">{togglefav ? "Hide Favourites" : "Show Favourites"}</button>
                     {togglefav && (
-                        <div>
-                            <h3>Favourite Searches:</h3>
+                        <div className= "favorites-block" >
+
                             <ul>
                                 {Array.from(myFav).map((fav, index) => (
                                     <li key={index}>
-                                        <button onClick={() => handleSearch(fav)} id="Favsearch" type ="button">{fav}</button>
+                                        <button onClick={() => favClick(fav)} id="Favsearch" type ="button" className= "bg-blue-300">{fav}</button>
                                     </li>
                                 ))}
                             </ul>
                         </div>
                     )}
-                </button>
+
+                </div>
             </div>
         </div>
     );
